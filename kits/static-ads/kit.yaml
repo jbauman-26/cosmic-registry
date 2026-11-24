@@ -1,0 +1,24 @@
+name: static-ads
+version: 1.0.0
+title: Static ads
+summary: Finds the angles a brand's running Meta ads miss, proposes five concepts, and generates the images the owner picks on the owner's own Kie or fal key.
+keywords: [meta, ads, static, creative, images, ad library, kie, fal]
+needs: []
+requires_cli: 0.10.0
+writes: A concepts file, image files, prompts and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves.
+secrets:
+  - name: KIE_API_KEY
+    description: Kie key for image generation. Kie or fal, at least one. Save it with lifecycle secrets set kie-api-key --from-env KIE_API_KEY, or add it in the Cosmic app's settings.
+    required: false
+  - name: FAL_KEY
+    description: fal key for image generation. Kie or fal, at least one. Save it with lifecycle secrets set fal-key --from-env FAL_KEY.
+    required: false
+  - name: SCRAPECREATORS_KEY
+    description: ScrapeCreators key for reading the brand's ads in Meta's public Ad Library. ScrapeCreators or Apify. Save it with lifecycle secrets set scrapecreators-key --from-env SCRAPECREATORS_KEY.
+    required: false
+  - name: APIFY_TOKEN
+    description: Apify token, the other way to read the Ad Library. Save it with lifecycle secrets set apify-token --from-env APIFY_TOKEN.
+    required: false
+files:
+  - files/concepts.md
+  - files/cost-ledger.md

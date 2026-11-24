@@ -1,0 +1,25 @@
+name: ugc-video
+version: 1.0.0
+title: UGC video
+summary: Writes a short presenter script from the brand's site and reviews, renders voice and an AI presenter on the owner's own accounts, checks the render word by word, and adds captions.
+keywords: [meta, ads, ugc, video, avatar, voice, captions, creative, fal, kie, heygen, elevenlabs]
+needs: []
+requires_cli: 0.10.0
+writes: A script, voice and video files, captions, a word check and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves.
+secrets:
+  - name: FAL_KEY
+    description: fal key for voice, avatar and transcription models. fal or Kie, at least one. Save it with lifecycle secrets set fal-key --from-env FAL_KEY, or add it in the Cosmic app's settings.
+    required: false
+  - name: KIE_API_KEY
+    description: Kie key for voice and video models. fal or Kie, at least one. Save it with lifecycle secrets set kie-api-key --from-env KIE_API_KEY.
+    required: false
+  - name: ELEVENLABS_API_KEY
+    description: Optional. A direct ElevenLabs key for voice. Used only where your agent has an ElevenLabs tool. The CLI has no ElevenLabs ref yet.
+    required: false
+  - name: HEYGEN_API_KEY
+    description: Optional. A direct HeyGen key for the presenter render. Used only where your agent has a HeyGen tool. The CLI has no HeyGen ref yet.
+    required: false
+files:
+  - files/script.md
+  - files/word-check.md
+  - files/cost-ledger.md

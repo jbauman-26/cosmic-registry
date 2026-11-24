@@ -1,0 +1,14 @@
+name: weekly-numbers
+version: 1.0.0
+title: Weekly numbers
+summary: A Monday summary built from verified metrics only, leading with the trust line and how fresh each source is.
+keywords: [weekly, monday, summary, metrics, shopify, klaviyo, ga4, stripe, meta, report]
+needs: [shopify]
+requires_cli: 0.8.0
+writes: nothing
+secrets:
+  - name: SHOPIFY_SECRET
+    description: Client secret of the Shopify custom app with read_orders. See lifecycle docs setup. Every other connected source is included on its own.
+    required: true
+files:
+  - files/weekly-summary.md

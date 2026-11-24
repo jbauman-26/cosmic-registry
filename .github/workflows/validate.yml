@@ -14,5 +14,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install -g https://github.com/jbauman-26/cosmic-lifecycle/releases/latest/download/cosmic-lifecycle.tgz
-      - run: lifecycle kits validate .
+      # The CLI repo is private, so its release cannot be downloaded here. scripts/validate.mjs runs the same checks.
+      - run: npm install --no-save yaml@2
+      - run: node scripts/validate.mjs .
