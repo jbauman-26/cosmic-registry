@@ -1,0 +1,17 @@
+name: meta-spend-check
+version: 1.0.0
+title: Meta spend check
+summary: A weekly read-only look at Meta ad spend against Shopify net revenue, with Meta's own purchase claims kept apart and labeled.
+keywords: [meta, ads, spend, shopify, revenue, roas, efficiency, weekly]
+needs: [shopify, meta]
+requires_cli: 0.11.0
+writes: nothing
+secrets:
+  - name: META_ADS_TOKEN
+    description: Meta system user token with ads_read only. Connect it with lifecycle connect meta --account ID --token-env META_ADS_TOKEN, or on the Connections screen of the Cosmic app.
+    required: true
+  - name: SHOPIFY_SECRET
+    description: Client secret of the Shopify custom app with read_orders. See lifecycle docs setup.
+    required: true
+files:
+  - files/spend-summary.md

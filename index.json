@@ -20,6 +20,28 @@
       "writes": "nothing"
     },
     {
+      "name": "meta-spend-check",
+      "version": "1.0.0",
+      "path": "kits/meta-spend-check",
+      "title": "Meta spend check",
+      "summary": "A weekly read-only look at Meta ad spend against Shopify net revenue, with Meta's own purchase claims kept apart and labeled.",
+      "keywords": [
+        "meta",
+        "ads",
+        "spend",
+        "shopify",
+        "revenue",
+        "roas",
+        "efficiency",
+        "weekly"
+      ],
+      "needs": [
+        "shopify",
+        "meta"
+      ],
+      "writes": "nothing"
+    },
+    {
       "name": "revenue-per-flow",
       "version": "1.0.0",
       "path": "kits/revenue-per-flow",
@@ -34,6 +56,94 @@
       ],
       "needs": [
         "klaviyo",
+        "shopify"
+      ],
+      "writes": "nothing"
+    },
+    {
+      "name": "static-ads",
+      "version": "1.0.0",
+      "path": "kits/static-ads",
+      "title": "Static ads",
+      "summary": "Finds the angles a brand's running Meta ads miss, proposes five concepts, and generates the images the owner picks on the owner's own Kie or fal key.",
+      "keywords": [
+        "meta",
+        "ads",
+        "static",
+        "creative",
+        "images",
+        "ad library",
+        "kie",
+        "fal"
+      ],
+      "needs": [],
+      "writes": "A concepts file, image files, prompts and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves."
+    },
+    {
+      "name": "store-health-check",
+      "version": "1.0.0",
+      "path": "kits/store-health-check",
+      "title": "Store health check",
+      "summary": "Reads the status of every source and the reconcile checks, then tells the owner in plain words what to fix first.",
+      "keywords": [
+        "health",
+        "status",
+        "reconcile",
+        "trust",
+        "freshness",
+        "sync",
+        "shopify",
+        "klaviyo",
+        "ga4",
+        "setup"
+      ],
+      "needs": [
+        "shopify"
+      ],
+      "writes": "nothing"
+    },
+    {
+      "name": "ugc-video",
+      "version": "1.0.0",
+      "path": "kits/ugc-video",
+      "title": "UGC video",
+      "summary": "Writes a short presenter script from the brand's site and reviews, renders voice and an AI presenter on the owner's own accounts, checks the render word by word, and adds captions.",
+      "keywords": [
+        "meta",
+        "ads",
+        "ugc",
+        "video",
+        "avatar",
+        "voice",
+        "captions",
+        "creative",
+        "fal",
+        "kie",
+        "heygen",
+        "elevenlabs"
+      ],
+      "needs": [],
+      "writes": "A script, voice and video files, captions, a word check and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves."
+    },
+    {
+      "name": "weekly-numbers",
+      "version": "1.0.0",
+      "path": "kits/weekly-numbers",
+      "title": "Weekly numbers",
+      "summary": "A Monday summary built from verified metrics only, leading with the trust line and how fresh each source is.",
+      "keywords": [
+        "weekly",
+        "monday",
+        "summary",
+        "metrics",
+        "shopify",
+        "klaviyo",
+        "ga4",
+        "stripe",
+        "meta",
+        "report"
+      ],
+      "needs": [
         "shopify"
       ],
       "writes": "nothing"

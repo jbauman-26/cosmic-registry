@@ -1,0 +1,14 @@
+name: store-health-check
+version: 1.0.0
+title: Store health check
+summary: Reads the status of every source and the reconcile checks, then tells the owner in plain words what to fix first.
+keywords: [health, status, reconcile, trust, freshness, sync, shopify, klaviyo, ga4, setup]
+needs: [shopify]
+requires_cli: 0.8.0
+writes: nothing
+secrets:
+  - name: SHOPIFY_SECRET
+    description: Client secret of the Shopify custom app with read_orders. See lifecycle docs setup. Every other connected source is checked on its own.
+    required: true
+files:
+  - files/health-summary.md
