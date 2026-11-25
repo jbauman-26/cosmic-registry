@@ -7,7 +7,10 @@ import { join, resolve } from 'node:path'
 import { parse } from 'yaml'
 
 const dir = resolve(process.argv[2] ?? '.')
-const SOURCES = ['klaviyo', 'shopify', 'ga4', 'stripe', 'meta']
+const SOURCES = ['klaviyo', 'shopify', 'ga4', 'stripe', 'meta', 'hubspot']
+// 0.14.0: sources after 0.13 go in extra_needs, so CLIs before 0.14.0 can still read every kit.
+const EXTRA_SOURCES = ['hubspot']
+const TYPES = ['shopify', 'ecommerce', 'saas', 'b2b', 'agency', 'creator']
 const SEMVER = /^\d+\.\d+\.\d+$/
 const problems = []
 const built = []
@@ -20,6 +23,9 @@ function manifestProblems(m) {
   if (!text(m.version) || !SEMVER.test(m.version)) out.push('version must look like 1.0.0')
   for (const k of ['title', 'summary', 'writes']) if (!text(m[k])) out.push(`${k} is required`)
   if (!Array.isArray(m.needs) || m.needs.some((s) => !SOURCES.includes(s))) out.push(`needs must be a list drawn from ${SOURCES.join(', ')}`)
+  if (m.extra_needs !== undefined && !(Array.isArray(m.extra_needs) && m.extra_needs.every((s) => EXTRA_SOURCES.includes(s)))) out.push(`extra_needs must be a list drawn from ${EXTRA_SOURCES.join(', ')}`)
+  if (Array.isArray(m.needs) && m.needs.some((s) => EXTRA_SOURCES.includes(s))) out.push('put hubspot in extra_needs, not needs, so older CLIs can read the kit')
+  if (m.types !== undefined && !(Array.isArray(m.types) && m.types.every((t) => TYPES.includes(t)))) out.push(`types must be a list drawn from ${TYPES.join(', ')}`)
   if (m.requires_cli !== undefined && !(text(m.requires_cli) && SEMVER.test(m.requires_cli))) out.push('requires_cli must look like 0.10.0')
   for (const k of ['keywords', 'files']) if (m[k] !== undefined && !(Array.isArray(m[k]) && m[k].every((v) => typeof v === 'string'))) out.push(`${k} must be a list of text`)
   if (m.secrets !== undefined && !(Array.isArray(m.secrets) && m.secrets.every((s) => s && text(s.name) && text(s.description) && (s.required === undefined || typeof s.required === 'boolean')))) out.push('each secret needs a name and a description')
@@ -61,7 +67,7 @@ else {
       if (!existsSync(target)) problems.push({ kit: name, problem: `AGENT.md points at ${rel}, which does not exist.` })
     }
     if (/[–—]/.test(agent + raw)) problems.push({ kit: name, problem: 'Contains an em or en dash.' })
-    built.push({ name: m.name, version: m.version, path: `kits/${name}`, title: m.title, summary: m.summary, keywords: m.keywords ?? [], needs: m.needs, writes: m.writes })
+    built.push({ name: m.name, version: m.version, path: `kits/${name}`, title: m.title, summary: m.summary, keywords: m.keywords ?? [], needs: [...m.needs, ...(m.extra_needs ?? [])], writes: m.writes, ...(m.types ? { types: m.types } : {}) })
   }
   const indexPath = join(dir, 'index.json')
   if (!existsSync(indexPath)) problems.push({ problem: 'No index.json. Run lifecycle kits validate . --write-index' })

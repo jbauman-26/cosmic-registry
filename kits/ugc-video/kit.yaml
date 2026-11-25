@@ -1,9 +1,10 @@
 name: ugc-video
-version: 1.0.0
+version: 1.0.1
 title: UGC video
 summary: Writes a short presenter script from the brand's site and reviews, renders voice and an AI presenter on the owner's own accounts, checks the render word by word, and adds captions.
 keywords: [meta, ads, ugc, video, avatar, voice, captions, creative, fal, kie, heygen, elevenlabs]
 needs: []
+types: [shopify, ecommerce, saas, b2b, agency, creator]
 requires_cli: 0.10.0
 writes: A script, voice and video files, captions, a word check and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves.
 secrets:

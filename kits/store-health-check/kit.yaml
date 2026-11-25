@@ -1,9 +1,10 @@
 name: store-health-check
-version: 1.0.0
+version: 1.0.1
 title: Store health check
 summary: Reads the status of every source and the reconcile checks, then tells the owner in plain words what to fix first.
 keywords: [health, status, reconcile, trust, freshness, sync, shopify, klaviyo, ga4, setup]
 needs: [shopify]
+types: [shopify]
 requires_cli: 0.8.0
 writes: nothing
 secrets:

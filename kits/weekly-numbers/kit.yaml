@@ -1,9 +1,10 @@
 name: weekly-numbers
-version: 1.0.0
+version: 1.0.1
 title: Weekly numbers
 summary: A Monday summary built from verified metrics only, leading with the trust line and how fresh each source is.
 keywords: [weekly, monday, summary, metrics, shopify, klaviyo, ga4, stripe, meta, report]
 needs: [shopify]
+types: [shopify]
 requires_cli: 0.8.0
 writes: nothing
 secrets:

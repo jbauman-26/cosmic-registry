@@ -1,9 +1,10 @@
 name: meta-spend-check
-version: 1.0.0
+version: 1.0.1
 title: Meta spend check
 summary: A weekly read-only look at Meta ad spend against Shopify net revenue, with Meta's own purchase claims kept apart and labeled.
 keywords: [meta, ads, spend, shopify, revenue, roas, efficiency, weekly]
 needs: [shopify, meta]
+types: [shopify]
 requires_cli: 0.11.0
 writes: nothing
 secrets:
