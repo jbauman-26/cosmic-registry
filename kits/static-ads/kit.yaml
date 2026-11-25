@@ -1,9 +1,10 @@
 name: static-ads
-version: 1.0.0
+version: 1.0.1
 title: Static ads
 summary: Finds the angles a brand's running Meta ads miss, proposes five concepts, and generates the images the owner picks on the owner's own Kie or fal key.
 keywords: [meta, ads, static, creative, images, ad library, kie, fal]
 needs: []
+types: [shopify, ecommerce, saas, b2b, agency, creator]
 requires_cli: 0.10.0
 writes: A concepts file, image files, prompts and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves.
 secrets:

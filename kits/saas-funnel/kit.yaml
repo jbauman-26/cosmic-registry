@@ -1,0 +1,18 @@
+name: saas-funnel
+version: 1.0.0
+title: SaaS funnel and churn
+summary: A monthly look at a subscription business from Stripe, covering visits to paid, new paying customers, MRR and net new MRR, churn and failed payments, and blended cost per new customer.
+keywords: [saas, subscription, stripe, mrr, churn, cac, funnel, failed payments, monthly, creator, membership]
+needs: [stripe]
+types: [saas, creator]
+requires_cli: 0.14.0
+writes: nothing
+secrets:
+  - name: STRIPE_READ_KEY
+    description: A Stripe restricted key with Read on Charges and Subscriptions only. See lifecycle docs setup.
+    required: true
+  - name: META_ADS_TOKEN
+    description: A Meta system user token with ads_read, for cost per new customer. Optional.
+    required: false
+files:
+  - files/funnel-summary.md

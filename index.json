@@ -2,8 +2,41 @@
   "version": 1,
   "kits": [
     {
-      "name": "flow-audit",
+      "name": "ad-claims-check",
       "version": "1.0.0",
+      "path": "kits/ad-claims-check",
+      "title": "Ad claims against your source of truth",
+      "summary": "Sets what Meta says its ads produced beside what your source of truth recorded on the same days, and shows the gap without blaming either side.",
+      "keywords": [
+        "meta",
+        "ads",
+        "roas",
+        "attribution",
+        "claims",
+        "stripe",
+        "hubspot",
+        "ga4",
+        "agency",
+        "saas",
+        "ecommerce",
+        "creator",
+        "weekly"
+      ],
+      "needs": [
+        "meta"
+      ],
+      "writes": "nothing",
+      "types": [
+        "ecommerce",
+        "saas",
+        "agency",
+        "creator",
+        "b2b"
+      ]
+    },
+    {
+      "name": "flow-audit",
+      "version": "1.0.1",
       "path": "kits/flow-audit",
       "title": "Flow audit",
       "summary": "Finds missing, silent and declining Klaviyo flows, with evidence for each finding.",
@@ -17,11 +50,16 @@
       "needs": [
         "klaviyo"
       ],
-      "writes": "nothing"
+      "writes": "nothing",
+      "types": [
+        "shopify",
+        "ecommerce",
+        "creator"
+      ]
     },
     {
       "name": "meta-spend-check",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "path": "kits/meta-spend-check",
       "title": "Meta spend check",
       "summary": "A weekly read-only look at Meta ad spend against Shopify net revenue, with Meta's own purchase claims kept apart and labeled.",
@@ -39,11 +77,14 @@
         "shopify",
         "meta"
       ],
-      "writes": "nothing"
+      "writes": "nothing",
+      "types": [
+        "shopify"
+      ]
     },
     {
       "name": "revenue-per-flow",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "path": "kits/revenue-per-flow",
       "title": "Revenue per flow",
       "summary": "Ranks flows by attributed revenue per recipient and shows the share of Shopify revenue.",
@@ -58,11 +99,42 @@
         "klaviyo",
         "shopify"
       ],
-      "writes": "nothing"
+      "writes": "nothing",
+      "types": [
+        "shopify"
+      ]
+    },
+    {
+      "name": "saas-funnel",
+      "version": "1.0.0",
+      "path": "kits/saas-funnel",
+      "title": "SaaS funnel and churn",
+      "summary": "A monthly look at a subscription business from Stripe, covering visits to paid, new paying customers, MRR and net new MRR, churn and failed payments, and blended cost per new customer.",
+      "keywords": [
+        "saas",
+        "subscription",
+        "stripe",
+        "mrr",
+        "churn",
+        "cac",
+        "funnel",
+        "failed payments",
+        "monthly",
+        "creator",
+        "membership"
+      ],
+      "needs": [
+        "stripe"
+      ],
+      "writes": "nothing",
+      "types": [
+        "saas",
+        "creator"
+      ]
     },
     {
       "name": "static-ads",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "path": "kits/static-ads",
       "title": "Static ads",
       "summary": "Finds the angles a brand's running Meta ads miss, proposes five concepts, and generates the images the owner picks on the owner's own Kie or fal key.",
@@ -77,11 +149,19 @@
         "fal"
       ],
       "needs": [],
-      "writes": "A concepts file, image files, prompts and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves."
+      "writes": "A concepts file, image files, prompts and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves.",
+      "types": [
+        "shopify",
+        "ecommerce",
+        "saas",
+        "b2b",
+        "agency",
+        "creator"
+      ]
     },
     {
       "name": "store-health-check",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "path": "kits/store-health-check",
       "title": "Store health check",
       "summary": "Reads the status of every source and the reconcile checks, then tells the owner in plain words what to fix first.",
@@ -100,11 +180,14 @@
       "needs": [
         "shopify"
       ],
-      "writes": "nothing"
+      "writes": "nothing",
+      "types": [
+        "shopify"
+      ]
     },
     {
       "name": "ugc-video",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "path": "kits/ugc-video",
       "title": "UGC video",
       "summary": "Writes a short presenter script from the brand's site and reviews, renders voice and an AI presenter on the owner's own accounts, checks the render word by word, and adds captions.",
@@ -123,11 +206,19 @@
         "elevenlabs"
       ],
       "needs": [],
-      "writes": "A script, voice and video files, captions, a word check and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves."
+      "writes": "A script, voice and video files, captions, a word check and a cost ledger on this computer. Uploads to Meta only as a separate step the owner approves.",
+      "types": [
+        "shopify",
+        "ecommerce",
+        "saas",
+        "b2b",
+        "agency",
+        "creator"
+      ]
     },
     {
       "name": "weekly-numbers",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "path": "kits/weekly-numbers",
       "title": "Weekly numbers",
       "summary": "A Monday summary built from verified metrics only, leading with the trust line and how fresh each source is.",
@@ -146,11 +237,41 @@
       "needs": [
         "shopify"
       ],
-      "writes": "nothing"
+      "writes": "nothing",
+      "types": [
+        "shopify"
+      ]
+    },
+    {
+      "name": "weekly-pipeline",
+      "version": "1.0.0",
+      "path": "kits/weekly-pipeline",
+      "title": "Weekly pipeline numbers",
+      "summary": "A Monday page of B2B pipeline numbers checked against HubSpot's own counts, with leads and pipeline by original source and cost per lead beside pipeline created.",
+      "keywords": [
+        "b2b",
+        "pipeline",
+        "hubspot",
+        "crm",
+        "leads",
+        "deals",
+        "win rate",
+        "cost per lead",
+        "weekly",
+        "agency"
+      ],
+      "needs": [
+        "hubspot"
+      ],
+      "writes": "nothing",
+      "types": [
+        "b2b",
+        "agency"
+      ]
     },
     {
       "name": "winback-segment",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "path": "kits/winback-segment",
       "title": "Win-back segment",
       "summary": "Proposes a win-back segment from the brand's own repeat timing, and creates it only after review.",
@@ -166,7 +287,10 @@
         "klaviyo",
         "shopify"
       ],
-      "writes": "one Klaviyo segment, after a reviewed plan and --confirm. Never sends."
+      "writes": "one Klaviyo segment, after a reviewed plan and --confirm. Never sends.",
+      "types": [
+        "shopify"
+      ]
     }
   ]
 }

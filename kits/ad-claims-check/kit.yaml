@@ -1,0 +1,18 @@
+name: ad-claims-check
+version: 1.0.0
+title: Ad claims against your source of truth
+summary: Sets what Meta says its ads produced beside what your source of truth recorded on the same days, and shows the gap without blaming either side.
+keywords: [meta, ads, roas, attribution, claims, stripe, hubspot, ga4, agency, saas, ecommerce, creator, weekly]
+needs: [meta]
+types: [ecommerce, saas, agency, creator, b2b]
+requires_cli: 0.14.0
+writes: nothing
+secrets:
+  - name: META_ADS_TOKEN
+    description: A Meta system user token with ads_read only. See lifecycle docs setup.
+    required: true
+  - name: STRIPE_READ_KEY
+    description: A Stripe restricted key with Read on Charges and Subscriptions, when Stripe is the source of truth.
+    required: false
+files:
+  - files/claims-summary.md

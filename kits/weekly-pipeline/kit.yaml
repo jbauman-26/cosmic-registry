@@ -1,0 +1,19 @@
+name: weekly-pipeline
+version: 1.0.0
+title: Weekly pipeline numbers
+summary: A Monday page of B2B pipeline numbers checked against HubSpot's own counts, with leads and pipeline by original source and cost per lead beside pipeline created.
+keywords: [b2b, pipeline, hubspot, crm, leads, deals, win rate, cost per lead, weekly, agency]
+needs: []
+extra_needs: [hubspot]
+types: [b2b, agency]
+requires_cli: 0.14.0
+writes: nothing
+secrets:
+  - name: HUBSPOT_TOKEN
+    description: Access token of a HubSpot private app with crm.objects.deals.read and crm.objects.contacts.read only. See lifecycle docs setup.
+    required: true
+  - name: META_ADS_TOKEN
+    description: A Meta system user token with ads_read, for cost per lead. Optional.
+    required: false
+files:
+  - files/pipeline-summary.md
