@@ -1,0 +1,15 @@
+name: packaging-review
+version: 1.0.0
+title: Packaging review
+summary: Sends a title, thumbnail idea, hook, script or post to Cosmic Cloud's packaging review and shows the verdict, the fixes and the rewrites. Pro and Agency.
+keywords: [youtube, title, thumbnail, hook, script, shorts, tiktok, linkedin, x, packaging, creator]
+needs: []
+types: [shopify, ecommerce, saas, b2b, agency, creator]
+requires_cli: 0.10.0
+writes: Nothing. It shows the review in the conversation, and saves a copy on this computer only if the owner asks.
+secrets:
+  - name: COSMIC_CLOUD_TOKEN
+    description: A Cosmic Cloud token for this workspace, made under Developers in Cosmic Cloud. Needed only for the direct call in step 3; the Cosmic MCP server already carries it.
+    required: false
+files:
+  - files/review-format.md
