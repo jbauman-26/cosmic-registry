@@ -83,6 +83,36 @@
       ]
     },
     {
+      "name": "packaging-review",
+      "version": "1.0.0",
+      "path": "kits/packaging-review",
+      "title": "Packaging review",
+      "summary": "Sends a title, thumbnail idea, hook, script or post to Cosmic Cloud's packaging review and shows the verdict, the fixes and the rewrites. Pro and Agency.",
+      "keywords": [
+        "youtube",
+        "title",
+        "thumbnail",
+        "hook",
+        "script",
+        "shorts",
+        "tiktok",
+        "linkedin",
+        "x",
+        "packaging",
+        "creator"
+      ],
+      "needs": [],
+      "writes": "Nothing. It shows the review in the conversation, and saves a copy on this computer only if the owner asks.",
+      "types": [
+        "shopify",
+        "ecommerce",
+        "saas",
+        "b2b",
+        "agency",
+        "creator"
+      ]
+    },
+    {
       "name": "revenue-per-flow",
       "version": "1.0.1",
       "path": "kits/revenue-per-flow",
