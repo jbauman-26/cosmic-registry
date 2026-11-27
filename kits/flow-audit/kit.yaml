@@ -1,5 +1,5 @@
 name: flow-audit
-version: 1.0.1
+version: 1.1.0
 title: Flow audit
 summary: Finds missing, silent and declining Klaviyo flows, with evidence for each finding.
 keywords: [klaviyo, flows, audit, email, retention]

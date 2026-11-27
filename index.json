@@ -35,8 +35,86 @@
       ]
     },
     {
+      "name": "cash-cycle",
+      "version": "1.0.0",
+      "path": "kits/cash-cycle",
+      "title": "Cash cycle and weeks of cover",
+      "summary": "Works out how many days cash is tied up between paying suppliers and getting paid, and the weeks of stock on hand against the supplier's lead time, from the store's cost of goods and the owner's own figures.",
+      "keywords": [
+        "cash",
+        "inventory",
+        "stock",
+        "working capital",
+        "cover",
+        "lead time",
+        "suppliers",
+        "shopify"
+      ],
+      "needs": [
+        "shopify"
+      ],
+      "writes": "nothing",
+      "types": [
+        "shopify",
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "channel-claim-audit",
+      "version": "1.0.0",
+      "path": "kits/channel-claim-audit",
+      "title": "Channel claim audit",
+      "summary": "Once a month, checks each ad platform's claimed revenue against Shopify net revenue and against its own history, with four pass, watch or fail checks, and names channels whose numbers should not drive budget until a holdout test settles them.",
+      "keywords": [
+        "attribution",
+        "claims",
+        "meta",
+        "google",
+        "roas",
+        "audit",
+        "monthly",
+        "shopify",
+        "holdout"
+      ],
+      "needs": [
+        "shopify",
+        "meta"
+      ],
+      "writes": "nothing",
+      "types": [
+        "shopify",
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "cm-waterfall",
+      "version": "1.0.0",
+      "path": "kits/cm-waterfall",
+      "title": "Contribution margin waterfall",
+      "summary": "Lays out contribution margin layer by layer (after product costs, after shipping and fees, after ad spend) for the last 30 days beside the 30 before and the last 90, and names the layer that moved.",
+      "keywords": [
+        "margin",
+        "contribution",
+        "profit",
+        "cogs",
+        "shipping",
+        "fees",
+        "ads",
+        "monthly",
+        "shopify"
+      ],
+      "needs": [
+        "shopify"
+      ],
+      "writes": "nothing",
+      "types": [
+        "shopify",
+        "ecommerce"
+      ]
+    },
+    {
       "name": "flow-audit",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "path": "kits/flow-audit",
       "title": "Flow audit",
       "summary": "Finds missing, silent and declining Klaviyo flows, with evidence for each finding.",
@@ -55,6 +133,60 @@
         "shopify",
         "ecommerce",
         "creator"
+      ]
+    },
+    {
+      "name": "holdout-planner",
+      "version": "1.0.0",
+      "path": "kits/holdout-planner",
+      "title": "Holdout test planner",
+      "summary": "Designs a holdout test a small store can actually run (a welcome email holdout, or a region held back from one ad channel) sized from its own orders, with the split, the duration, the one number to read and the decision rule written before it starts.",
+      "keywords": [
+        "holdout",
+        "incrementality",
+        "test",
+        "lift",
+        "welcome",
+        "geo",
+        "email",
+        "ads",
+        "experiment",
+        "shopify"
+      ],
+      "needs": [
+        "shopify"
+      ],
+      "writes": "nothing",
+      "types": [
+        "shopify",
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "marginal-return",
+      "version": "1.0.0",
+      "path": "kits/marginal-return",
+      "title": "Marginal return",
+      "summary": "Reads what the last step up or down in a channel's spend did to Shopify net revenue, new orders and margin after ads, by comparing two spend levels, and gives scale, hold or cut against the store's own break-even.",
+      "keywords": [
+        "marginal",
+        "scale",
+        "budget",
+        "spend",
+        "meta",
+        "google",
+        "break-even",
+        "weekly",
+        "shopify"
+      ],
+      "needs": [
+        "shopify",
+        "meta"
+      ],
+      "writes": "nothing",
+      "types": [
+        "shopify",
+        "ecommerce"
       ]
     },
     {
@@ -94,7 +226,7 @@
     },
     {
       "name": "meta-spend-check",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "path": "kits/meta-spend-check",
       "title": "Meta spend check",
       "summary": "A weekly read-only look at Meta ad spend against Shopify net revenue, with Meta's own purchase claims kept apart and labeled.",
@@ -149,7 +281,7 @@
     },
     {
       "name": "revenue-per-flow",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "path": "kits/revenue-per-flow",
       "title": "Revenue per flow",
       "summary": "Ranks flows by attributed revenue per recipient and shows the share of Shopify revenue.",
@@ -226,7 +358,7 @@
     },
     {
       "name": "store-health-check",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "path": "kits/store-health-check",
       "title": "Store health check",
       "summary": "Reads the status of every source and the reconcile checks, then tells the owner in plain words what to fix first.",
@@ -283,7 +415,7 @@
     },
     {
       "name": "weekly-numbers",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "path": "kits/weekly-numbers",
       "title": "Weekly numbers",
       "summary": "A Monday summary built from verified metrics only, leading with the trust line and how fresh each source is.",

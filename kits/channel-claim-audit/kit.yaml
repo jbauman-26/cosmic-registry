@@ -1,0 +1,18 @@
+name: channel-claim-audit
+version: 1.0.0
+title: Channel claim audit
+summary: Once a month, checks each ad platform's claimed revenue against Shopify net revenue and against its own history, with four pass, watch or fail checks, and names channels whose numbers should not drive budget until a holdout test settles them.
+keywords: [attribution, claims, meta, google, roas, audit, monthly, shopify, holdout]
+needs: [shopify, meta]
+types: [shopify, ecommerce]
+requires_cli: 0.14.1
+writes: nothing
+secrets:
+  - name: META_ADS_TOKEN
+    description: Meta system user token with ads_read only. Connect it with lifecycle connect meta --account ID --token-env META_ADS_TOKEN, or on the Connections screen of the Cosmic app.
+    required: true
+  - name: SHOPIFY_SECRET
+    description: Client secret of the Shopify custom app with read_orders. See lifecycle docs setup.
+    required: true
+files:
+  - files/claim-audit.md

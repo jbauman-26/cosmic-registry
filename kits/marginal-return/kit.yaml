@@ -1,0 +1,18 @@
+name: marginal-return
+version: 1.0.0
+title: Marginal return
+summary: Reads what the last step up or down in a channel's spend did to Shopify net revenue, new orders and margin after ads, by comparing two spend levels, and gives scale, hold or cut against the store's own break-even.
+keywords: [marginal, scale, budget, spend, meta, google, break-even, weekly, shopify]
+needs: [shopify, meta]
+types: [shopify, ecommerce]
+requires_cli: 0.14.0
+writes: nothing
+secrets:
+  - name: META_ADS_TOKEN
+    description: Meta system user token with ads_read only. Connect it with lifecycle connect meta --account ID --token-env META_ADS_TOKEN, or on the Connections screen of the Cosmic app.
+    required: true
+  - name: SHOPIFY_SECRET
+    description: Client secret of the Shopify custom app with read_orders. See lifecycle docs setup.
+    required: true
+files:
+  - files/marginal-return.md

@@ -23,8 +23,9 @@ Each step names a tool first, then the terminal command that does the same job. 
 7. Write the summary in the shape of `files/weekly-summary.md`. The first line is the trust line from the last `metric` call, word for word. The second block is one line per source with its last sync. Any failed check is named next, before the first number.
 8. Group the numbers by source: store, email, site, subscriptions, ads. Put the metric's name in brackets beside each number, so the owner can ask for it again by name.
 9. Label attribution every time. Klaviyo flow revenue is "attributed revenue". Meta's purchases and ROAS are "Meta's own claim", in their own block, and are never added to store or email revenue.
-10. Close with at most three lines under "Changed most", each one a metric that moved the furthest between the prior 7 days and the last 7, with both numbers. Give no cause. If a total sits on a small count, say the count.
-11. Follow `../shared/editing-standard.md` for everything you write. If you cannot open that file, hold to this much: no em or en dashes, no invented facts, plain verbs, and a second read of the draft before the owner sees it.
+10. Add a "Margin and ad checks" block, each line labeled "calculated from metric runs". Skip a line whose metric is not in `list_metrics`, and list it under "Not available". (a) Contribution margin after ad spend: the `contribution_margin` result's after-ads total for 7 and 28 days, with its `included` and `missing` lines. A result with status `no_costs` says the owner can add costs, and gives no margin. (b) Break-even return on ad spend: 1 divided by the after-fees margin as a share of net revenue. (c) Claim ratio: `meta_reported_roas` times `meta_ad_spend`, divided by `shopify_net_revenue`, for 7 and 28 days. Above 1 means Meta claims more than the store took in. (d) Ad spend per new order: `meta_ad_spend` divided by (`shopify_orders` times 1 minus `returning_order_share`). (e) If the owner gave a goal in this conversation, the 28-day figure beside it.
+11. Close with at most three lines under "Changed most", each one a metric that moved the furthest between the prior 7 days and the last 7, with both numbers. Give no cause. If a total sits on a small count, say the count.
+12. Follow `../shared/editing-standard.md` for everything you write. If you cannot open that file, hold to this much: no em or en dashes, no invented facts, plain verbs, and a second read of the draft before the owner sees it.
 
 ## Rules
 
@@ -45,3 +46,4 @@ Each step names a tool first, then the terminal command that does the same job. 
 - [ ] Flow revenue is called attributed revenue, and Meta's numbers sit in their own labeled block.
 - [ ] Nothing was sent to anyone.
 - [ ] The summary passed the editing standard at 16 of 20 or better.
+- [ ] The margin and ad checks block labels every line calculated, or lists it under Not available.

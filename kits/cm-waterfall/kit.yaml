@@ -1,0 +1,15 @@
+name: cm-waterfall
+version: 1.0.0
+title: Contribution margin waterfall
+summary: Lays out contribution margin layer by layer (after product costs, after shipping and fees, after ad spend) for the last 30 days beside the 30 before and the last 90, and names the layer that moved.
+keywords: [margin, contribution, profit, cogs, shipping, fees, ads, monthly, shopify]
+needs: [shopify]
+types: [shopify, ecommerce]
+requires_cli: 0.14.0
+writes: nothing
+secrets:
+  - name: SHOPIFY_SECRET
+    description: Client secret of the Shopify custom app with read_orders. See lifecycle docs setup.
+    required: true
+files:
+  - files/waterfall.md

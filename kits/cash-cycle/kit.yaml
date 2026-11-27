@@ -1,0 +1,15 @@
+name: cash-cycle
+version: 1.0.0
+title: Cash cycle and weeks of cover
+summary: Works out how many days cash is tied up between paying suppliers and getting paid, and the weeks of stock on hand against the supplier's lead time, from the store's cost of goods and the owner's own figures.
+keywords: [cash, inventory, stock, working capital, cover, lead time, suppliers, shopify]
+needs: [shopify]
+types: [shopify, ecommerce]
+requires_cli: 0.14.0
+writes: nothing
+secrets:
+  - name: SHOPIFY_SECRET
+    description: Client secret of the Shopify custom app with read_orders. See lifecycle docs setup.
+    required: true
+files:
+  - files/cash-cycle.md

@@ -31,7 +31,8 @@ Each step names a tool first, then the terminal command that does the same job. 
 
 5. Treat `skipped` as its own answer. A skipped check did not pass. Say what was not checked and which connection would let it run.
 6. Say plainly that no check covers Meta Ads or Stripe. Their numbers are read from the platform and are not compared with another source.
-7. Choose what to fix first, in this order, and stop at three:
+7. Early signals. For each metric below that `list_metrics` returns, call `metric` and mark it pass or hold with one line of reason. Skip the others. (a) `shopify_orders` for 1 day against the 28-day daily average: hold when yesterday is under half of it on a normal day. (b) `ga4_purchase_rate` for 7 days against 28: hold on a fall of a third or more. (c) `flow_spam_rate` for 7 days: hold at 0.3 percent or more, the inbox providers' limit. (d) `meta_ad_spend` for 7 days, as a daily rate, against its 28-day daily rate: hold when it runs more than 30 percent above. A hold is a reason to look, not a cause.
+8. Choose what to fix first, in this order, and stop at three:
    1. A source that is not connected, or whose key was refused.
    2. `freshness`.
    3. `orders_complete`, then `orders_vs_cohorts` and `flow_totals`.
@@ -39,9 +40,9 @@ Each step names a tool first, then the terminal command that does the same job. 
    5. `ga4_purchases`.
    6. `attributed_share`.
    7. A skipped check that would run if the owner connected a source.
-8. For each fix give one action and who takes it. In the app the owner syncs and reconnects from the Connections screen, since an agent there cannot. In a terminal the action is the `next` command that `status` or `doctor` printed.
-9. Write the summary in the shape of `files/health-summary.md`. The first line is the trust line. Tool: the `trust` line in any `metric` result or in `data_status`. Terminal: the `trust` field of `lifecycle status --format json`. Quote it word for word. If everything passed, say so in one line and keep the page short.
-10. Follow `../shared/editing-standard.md` for everything you write. If you cannot open that file, hold to this much: no em or en dashes, no invented facts, plain verbs, and a second read of the draft before the owner sees it.
+9. For each fix give one action and who takes it. In the app the owner syncs and reconnects from the Connections screen, since an agent there cannot. In a terminal the action is the `next` command that `status` or `doctor` printed.
+10. Write the summary in the shape of `files/health-summary.md`. The first line is the trust line. Tool: the `trust` line in any `metric` result or in `data_status`. Terminal: the `trust` field of `lifecycle status --format json`. Quote it word for word. If everything passed, say so in one line and keep the page short.
+11. Follow `../shared/editing-standard.md` for everything you write. If you cannot open that file, hold to this much: no em or en dashes, no invented facts, plain verbs, and a second read of the draft before the owner sees it.
 
 ## Rules
 
@@ -61,3 +62,4 @@ Each step names a tool first, then the terminal command that does the same job. 
 - [ ] Every figure appears in the reconcile or status output.
 - [ ] Nothing was changed on any platform.
 - [ ] The summary passed the editing standard at 16 of 20 or better.
+- [ ] Each early signal is pass, hold or skipped, with its two numbers.

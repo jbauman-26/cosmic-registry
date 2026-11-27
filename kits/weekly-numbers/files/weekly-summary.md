@@ -56,3 +56,15 @@ Meta's own claim about its own ads. These are not orders and are not added to an
 ## Not available
 
 - [metric name], [the source it is missing or the reason returned]
+
+## Margin and ad checks (calculated from metric runs)
+
+| Check | Last 7 days | Last 28 days |
+|---|---|---|
+| Contribution margin after ad spend (contribution_margin) | [$] | [$] |
+| Break-even return on ad spend | [x] | [x] |
+| Claim ratio: Meta's claimed revenue over Shopify net revenue | [x] | [x] |
+| Ad spend per new order | [$] | [$] |
+| Goal, if the owner gave one | | [value against target] |
+
+Counted in margin: [included line]. Left out: [missing line].
