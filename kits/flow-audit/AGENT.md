@@ -9,8 +9,9 @@ Before you start, run `lifecycle docs agents` and `lifecycle doctor --format jso
 3. Run `lifecycle audit flows --format json --html flow-audit.html`.
 4. Read the findings. Missing-flow findings match on flow names, so ask the user before calling a flow missing.
 5. Pick the three findings most likely to matter and explain why, using only numbers from the output or from `lifecycle query`.
-6. Write the summary in the shape of `files/findings-summary.md`.
-7. Follow `../shared/editing-standard.md` for everything you write.
+6. Revenue per email sent. Run `lifecycle metrics run flow_revenue_per_recipient --days 7 --format json`, then with `--days 28`. Report both and the share they changed. It is attributed revenue per recipient, not proof the emails caused the sales. If the metric is not in `lifecycle metrics list`, say it is not available. To learn what the welcome flow truly adds, point the user to the `holdout-planner` kit.
+7. Write the summary in the shape of `files/findings-summary.md`.
+8. Follow `../shared/editing-standard.md` for everything you write.
 
 Rules:
 - Never claim a flow caused revenue. Klaviyo's revenue is attributed.
@@ -23,3 +24,4 @@ Rules:
 - [ ] Every number in the summary appears in the audit output or a `lifecycle query` result.
 - [ ] Any flow called missing was confirmed with the user.
 - [ ] The summary passed the editing standard at 16 of 20 or better.
+- [ ] Revenue per email sent is reported as attributed, or named as not available.

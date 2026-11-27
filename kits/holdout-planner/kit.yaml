@@ -1,0 +1,15 @@
+name: holdout-planner
+version: 1.0.0
+title: Holdout test planner
+summary: Designs a holdout test a small store can actually run (a welcome email holdout, or a region held back from one ad channel) sized from its own orders, with the split, the duration, the one number to read and the decision rule written before it starts.
+keywords: [holdout, incrementality, test, lift, welcome, geo, email, ads, experiment, shopify]
+needs: [shopify]
+types: [shopify, ecommerce]
+requires_cli: 0.11.0
+writes: nothing
+secrets:
+  - name: SHOPIFY_SECRET
+    description: Client secret of the Shopify custom app with read_orders. See lifecycle docs setup.
+    required: true
+files:
+  - files/holdout-plan.md
