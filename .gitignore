@@ -1,2 +1,6 @@
 node_modules
 .DS_Store
+
+# Cosmic internal ICP, synced here by cosmic-alignment/sync-icp.sh for local agents only.
+# This repo is public and kits run on the customer's own data, so it never ships here.
+shared/ICP.md
