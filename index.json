@@ -58,6 +58,41 @@
       ]
     },
     {
+      "name": "meta-ads-diagnosis",
+      "version": "1.0.0",
+      "path": "kits/meta-ads-diagnosis",
+      "title": "Meta ads diagnosis",
+      "summary": "Reads a Meta ad account against the owner's funnel numbers, names the one constraint (leads, bookings, shows or closes), and writes a funnel diagnosis report with kill, keep and scale calls the owner approves.",
+      "keywords": [
+        "meta",
+        "ads",
+        "diagnosis",
+        "funnel",
+        "cpl",
+        "roas",
+        "scaling",
+        "fatigue",
+        "creative",
+        "leads",
+        "bookings",
+        "show rate",
+        "close rate",
+        "contribution margin",
+        "weekly"
+      ],
+      "needs": [
+        "meta"
+      ],
+      "writes": "nothing",
+      "types": [
+        "ecommerce",
+        "saas",
+        "agency",
+        "creator",
+        "b2b"
+      ]
+    },
+    {
       "name": "meta-spend-check",
       "version": "1.0.1",
       "path": "kits/meta-spend-check",

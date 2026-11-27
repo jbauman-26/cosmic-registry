@@ -1,0 +1,16 @@
+name: meta-ads-diagnosis
+version: 1.0.0
+title: Meta ads diagnosis
+summary: Reads a Meta ad account against the owner's funnel numbers, names the one constraint (leads, bookings, shows or closes), and writes a funnel diagnosis report with kill, keep and scale calls the owner approves.
+keywords: [meta, ads, diagnosis, funnel, cpl, roas, scaling, fatigue, creative, leads, bookings, show rate, close rate, contribution margin, weekly]
+needs: [meta]
+types: [ecommerce, saas, agency, creator, b2b]
+requires_cli: 0.14.0
+writes: nothing
+secrets:
+  - name: META_ADS_TOKEN
+    description: A Meta system user token with ads_read only. Connect it with lifecycle connect meta --account ID --token-env META_ADS_TOKEN, or on the Connections screen of the Cosmic app.
+    required: true
+files:
+  - files/diagnosis-report.md
+  - files/benchmarks.md
